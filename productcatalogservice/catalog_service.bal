@@ -17,7 +17,6 @@
 import ballerina/grpc;
 import ballerina/io;
 import ballerina/log;
-import ballerinax/jaeger as _;
 import wso2/client_stubs as stubs;
 
 configurable string productJsonPath = "./resources/products.json";
