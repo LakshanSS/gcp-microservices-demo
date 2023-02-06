@@ -19,7 +19,7 @@ import ballerina/io;
 import ballerina/log;
 import wso2/client_stubs as stubs;
 
-configurable string productJsonPath = "./resources/products.json";
+string productJsonPath = "./resources/products.json";
 
 # Reads a list of products from a JSON file and provides the ability to search products and get them individually.
 @display {
