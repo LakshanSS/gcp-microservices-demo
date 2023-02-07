@@ -1,4 +1,4 @@
-catalogHost="catalog-service"
+catalogHost="prodcat-2479457892"
 cartHost="cart-service"
 recommendHost="recommendation-service"
 currencyHost="currency-service"
@@ -13,14 +13,14 @@ recommendationTimeout=3.0
 adTimeout=3.0
 checkoutTimeout=3.0
 
-[ballerina.observe]
-tracingEnabled=true
-tracingProvider="jaeger"
+# [ballerina.observe]
+# tracingEnabled=true
+# tracingProvider="jaeger"
 
-[ballerinax.jaeger]
-agentHostname="jaeger"
-agentPort=55680
-samplerType="const"
-samplerParam=1.0
-reporterFlushInterval=2000
-reporterBufferSize=1000
+# [ballerinax.jaeger]
+# agentHostname="jaeger"
+# agentPort=55680
+# samplerType="const"
+# samplerParam=1.0
+# reporterFlushInterval=2000
+# reporterBufferSize=1000

@@ -1,4 +1,4 @@
-catalogHost="catalog"
+catalogHost="prodcat-2479457892"
 cartHost="cart"
 recommendHost="recommendation"
 currencyHost="currency"
