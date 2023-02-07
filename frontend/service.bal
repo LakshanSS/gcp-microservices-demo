@@ -77,6 +77,13 @@ service / on new http:Listener(9098) {
         log:printInfo("Frontend server started.");
     }
 
+    resource function get products () returns stubs:Product[]|error{
+        log:printInfo("get Products");
+        stubs:Product[] products = check getProducts();
+        log:printInfo(products.toString());
+        return products;
+    }
+
     # GET method to get the metadata like currency and cart size.
     #
     # + cookieHeader - header containing the cookie
