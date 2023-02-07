@@ -93,7 +93,6 @@ isolated function getSupportedCurrencies() returns string[]|grpc:Error {
 }
 
 isolated function getProducts() returns stubs:Product[]|grpc:Error {
-    log:printInfo(catalogHost);
     stubs:ListProductsResponse|grpc:Error productsResponse = catalogClient->ListProducts({});
     if productsResponse is grpc:Error {
         log:printError("Failed to list products from the catalog service", productsResponse);
