@@ -59,14 +59,14 @@ service class AuthInterceptor {
     }
 }
 
-//# This service serves the data required by the UI by communicating with internal gRPC services.
-// @http:ServiceConfig {
-//     cors: {
-//         allowOrigins: ["http://localhost:3000"],
-//         allowCredentials: true
-//     },
-//     interceptors: [new AuthInterceptor()]
-// }
+# This service serves the data required by the UI by communicating with internal gRPC services.
+@http:ServiceConfig {
+    cors: {
+        allowOrigins: ["http://localhost:3000"],
+        allowCredentials: true
+    },
+    interceptors: [new AuthInterceptor()]
+}
 @display {
     label: "Frontend",
     id: "frontend"
