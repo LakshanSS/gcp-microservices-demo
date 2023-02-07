@@ -123,6 +123,7 @@ service / on new http:Listener(9098) {
             return currencyCookie;
         }
         stubs:Product[] products = check getProducts();
+        log:printInfo(products.toString());
 
         ProductLocalized[] productsLocalized = [];
         foreach stubs:Product product in products {
