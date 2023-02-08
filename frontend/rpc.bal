@@ -21,13 +21,13 @@ import wso2/client_stubs as stubs;
 
 const LOCALHOST = "localhost";
 
-configurable decimal currencyTimeout = 3;
-configurable decimal catalogTimeout = 3;
-configurable decimal cartTimeout = 3;
-configurable decimal shippingTimeout = 3;
-configurable decimal recommendationTimeout = 3;
-configurable decimal adTimeout = 3;
-configurable decimal checkoutTimeout = 3;
+configurable decimal currencyTimeout = 60;
+configurable decimal catalogTimeout = 60;
+configurable decimal cartTimeout = 60;
+configurable decimal shippingTimeout = 60;
+configurable decimal recommendationTimeout = 60;
+configurable decimal adTimeout = 60;
+configurable decimal checkoutTimeout = 60;
 
 configurable string currencyHost = LOCALHOST;
 @display {
