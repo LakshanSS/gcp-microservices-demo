@@ -101,7 +101,8 @@ service / on new http:Listener(9098) {
         }
 
         log:printInfo("before calling getCart");
-        stubs:Cart cart = check getCart(sessionIdCookie.value);
+        log:printInfo(sessionIdCookie.toStringValue());
+        stubs:Cart cart = check getCart("testuser123");
         log:printInfo("after calling getCart");
         MetadataResponse metadataResponse = {
             headers: {
