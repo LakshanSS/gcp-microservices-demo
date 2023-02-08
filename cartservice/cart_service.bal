@@ -47,6 +47,8 @@ service "CartService" on new grpc:Listener(9092) {
     # + request - `AddItemRequest` containing the user id and the `CartItem`
     # + return - an `Empty` value or an error
     remote function AddItem(stubs:AddItemRequest request) returns stubs:Empty|error {
+        log:printInfo("get cart function");
+        log:printInfo(request.user_id);
         lock {
             check self.store.addItem(request.user_id, request.item.product_id, request.item.quantity);
         }
@@ -58,6 +60,8 @@ service "CartService" on new grpc:Listener(9092) {
     # + request - `GetCartRequest` containing the user id
     # + return - `Cart` containing the items or an error
     remote function GetCart(stubs:GetCartRequest request) returns stubs:Cart|error {
+        log:printInfo("get cart function");
+        log:printInfo(request.user_id);
         lock {
             return self.store.getCart(request.user_id).cloneReadOnly();
         }
@@ -68,6 +72,8 @@ service "CartService" on new grpc:Listener(9092) {
     # + request - `EmptyCartRequest` containing the user id
     # + return - `Empty` value or an error
     remote function EmptyCart(stubs:EmptyCartRequest request) returns stubs:Empty|error {
+        log:printInfo("empty cart function");
+        log:printInfo(request.user_id);
         lock {
             check self.store.emptyCart(request.user_id);
         }

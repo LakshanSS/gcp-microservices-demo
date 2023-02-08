@@ -100,7 +100,9 @@ service / on new http:Listener(9098) {
             return currencyCookie;
         }
 
+        log:printInfo("before calling getCart");
         stubs:Cart cart = check getCart(sessionIdCookie.value);
+        log:printInfo("after calling getCart");
         MetadataResponse metadataResponse = {
             headers: {
                 "Set-Cookie": sessionIdCookie.toStringValue()
