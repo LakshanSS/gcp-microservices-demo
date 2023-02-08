@@ -116,7 +116,7 @@ service "CheckoutService" on new grpc:Listener(9094) {
         string transactionId = check self.chargeCard(totalCost, request.credit_card);
         log:printInfo(string `Payment went through ${transactionId}`);
         string shippingTrackingId = check self.shipOrder(request.address, userCartItems);
-        check self.emptyUserCart(request.user_id);
+        //check self.emptyUserCart(request.user_id);
 
         stubs:OrderResult 'order = {
             order_id: orderId,
@@ -125,7 +125,7 @@ service "CheckoutService" on new grpc:Listener(9094) {
             shipping_address: request.address,
             items: orderItems
         };
-
+        log:printInfo('order.toString());
         stubs:Empty|grpc:Error result = self.sendConfirmationMail(request.email, 'order);
         if result is grpc:Error {
             log:printError(string `Failed to send order confirmation to ${request.email}`, result);
