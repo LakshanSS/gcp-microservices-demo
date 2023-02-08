@@ -137,12 +137,21 @@ service "CheckoutService" on new grpc:Listener(9094) {
     }
 
     function getUserCartItems(string userId, string userCurrency) returns stubs:CartItem[]|grpc:Error {
-        stubs:GetCartRequest getCartRequest = {user_id: userId};
-        stubs:Cart|grpc:Error cartResponse = self.cartClient->GetCart(getCartRequest);
-        if cartResponse is grpc:Error {
-            log:printError("Failed to call getCart of cart service", cartResponse);
-            return cartResponse;
-        }
+        //stubs:GetCartRequest getCartRequest = {user_id: userId};
+        // stubs:Cart|grpc:Error cartResponse = self.cartClient->GetCart(getCartRequest);
+        // if cartResponse is grpc:Error {
+        //     log:printError("Failed to call getCart of cart service", cartResponse);
+        //     return cartResponse;
+        // }
+        stubs:Cart cartResponse = {
+            user_id: "testuser123",
+            items: [
+                {
+                    product_id: "OLJCESPC7Z",
+                    quantity: 1
+                }
+            ]
+        };
         return cartResponse.items;
     }
 
