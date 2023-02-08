@@ -1,8 +1,8 @@
-catalogHost="catalog-service" 
-cartHost="cart-service" 
-currencyHost="currency-service" 
-shippingHost="shipping-service" 
-paymentHost="payment-service" 
+catalogHost="prodcat-2479457892" 
+cartHost="cart-968904858" 
+currencyHost="currency-2512741866" 
+shippingHost="shipping-1527744195" 
+paymentHost="payment-2724923889" 
 emailHost="email-service"
 cartTimeout=3.0
 catalogTimeout=3.0

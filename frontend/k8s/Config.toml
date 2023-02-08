@@ -1,10 +1,10 @@
 catalogHost="prodcat-2479457892"
-cartHost="cart-service"
+cartHost="cart-968904858"
 recommendHost="recommendation-service"
-currencyHost="currency-service"
-shippingHost="shipping-service"
+currencyHost="currency-2512741866"
+shippingHost="shipping-1527744195"
 checkoutHost="checkout-service"
-adHost="ads-service"
+adHost="adservice-136134387"
 currencyTimeout=3.0
 catalogTimeout=3.0
 cartTimeout=3.0
