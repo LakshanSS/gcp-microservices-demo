@@ -84,6 +84,19 @@ service / on new http:Listener(9098) {
         return products;
     }
 
+    resource function get testCart () returns stubs:Cart|error{
+        log:printInfo("get test1");
+        stubs:Cart cart = {
+        };
+        stubs:Cart|error cart2 = getCart("testuser123");
+        if cart2 is stubs:Cart {
+            log:printInfo(cart2.toString());
+        } else {
+            log:printInfo("Error:" + cart2.toString());
+        }
+        return cart;
+    }
+
     # GET method to get the metadata like currency and cart size.
     #
     # + cookieHeader - header containing the cookie
