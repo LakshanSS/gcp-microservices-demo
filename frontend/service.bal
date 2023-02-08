@@ -113,10 +113,16 @@ service / on new http:Listener(9098) {
             return currencyCookie;
         }
 
-        log:printInfo("before calling getCart");
-        log:printInfo(sessionIdCookie.toStringValue());
-        stubs:Cart cart = check getCart("testuser123");
-        log:printInfo("after calling getCart");
+        // stubs:Cart cart = check getCart("testuser123");
+        stubs:Cart cart = {
+            user_id: "testuser123",
+            items: [
+                {
+                    product_id: "OLJCESPC7Z",
+                    quantity: 1
+                }
+            ]
+        };
         MetadataResponse metadataResponse = {
             headers: {
                 "Set-Cookie": sessionIdCookie.toStringValue()
@@ -146,7 +152,6 @@ service / on new http:Listener(9098) {
             return currencyCookie;
         }
         stubs:Product[] products = check getProducts();
-        log:printInfo(products.toString());
 
         ProductLocalized[] productsLocalized = [];
         foreach stubs:Product product in products {
@@ -213,7 +218,16 @@ service / on new http:Listener(9098) {
             return sessionIdCookie;
         }
         string[] supportedCurrencies = check getSupportedCurrencies();
-        stubs:Cart cart = check getCart(sessionIdCookie.value);
+        //stubs:Cart cart = check getCart(sessionIdCookie.value);
+        stubs:Cart cart = {
+            user_id: "testuser123",
+            items: [
+                {
+                    product_id: "OLJCESPC7Z",
+                    quantity: 1
+                }
+            ]
+        };
         http:Response response = new;
         http:Cookie currencyCookie = new (CURRENCY_COOKIE, request.currency, path = "/");
         response.addCookie(currencyCookie);
@@ -241,7 +255,16 @@ service / on new http:Listener(9098) {
             return currencyCookie;
         }
         string userId = sessionIdCookie.value;
-        stubs:Cart cart = check getCart(userId);
+        //stubs:Cart cart = check getCart(userId);
+        stubs:Cart cart = {
+            user_id: "testuser123",
+            items: [
+                {
+                    product_id: "OLJCESPC7Z",
+                    quantity: 1
+                }
+            ]
+        };
         stubs:Product[] recommendations = check getRecommendations(userId, self.getProductIdFromCart(cart));
         stubs:Money shippingCost = check getShippingQuote(cart.items, currencyCookie.value);
         stubs:Money totalPrice = {
