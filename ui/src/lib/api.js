@@ -16,7 +16,7 @@
  *  under the License.
  */
 
-const FRONTEND_SVC_URL = 'http://localhost:9098';
+const FRONTEND_SVC_URL = 'https://293dc9ec-db8f-4273-88da-ad2b09c7c170-dev.e1-us-east-azure.choreoapis.dev/qxzw/frontend/1.0.0';
 
 export async function getAllQuotes() {
     const response = await fetch(`${FRONTEND_SVC_URL}/quotes.json`);
