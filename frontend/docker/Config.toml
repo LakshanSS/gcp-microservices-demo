@@ -1,10 +1,10 @@
 catalogHost="prodcat-2479457892"
-cartHost="cart"
-recommendHost="recommendation"
-currencyHost="currency"
-shippingHost="shipping"
-checkoutHost="checkout"
-adHost="ads"
+cartHost="cart-968904858"
+recommendHost="recommendation-3051418357"
+currencyHost="currency-2512741866"
+shippingHost="shipping-1527744195"
+checkoutHost="checkout-740814029"
+adHost="adservice-136134387"
 
 [ballerina.observe]
 tracingEnabled=true
