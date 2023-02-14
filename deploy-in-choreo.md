@@ -1,6 +1,7 @@
 ## Introduction
 
-Following are the services we will be deploying in Choreo
+The [gcp-microservices-demo](https://github.com/LakshanSS/gcp-microservices-demo) written in Ballerina has 10 services(9 gGRPC services and 1 HTTP sevice). `client_stubs` and `money` modules are published to [Ballerina Central](https://central.ballerina.io/) and they will be pulled automatically during the build. 
+Following are the services we will be deploying in Choreo.
 
 | Service     | Port   | Type | Component type in Choreo
 |-------------|--------|----- | --------------------------
@@ -22,11 +23,16 @@ Following are the services we will be deploying in Choreo
 - Create Component for each services
   - For all the gRPC services, we'll be creating a `Service` type Component. (Only the frontend service, we'll be creating a `REST API` Component)
   ![image](https://user-images.githubusercontent.com/32201965/217992483-7e590a8b-1e49-451e-8d0e-5e69b9eee362.png)
-  - After creating a component, go to `Deploy` page and deploy to Development environment. When deploying some of components, we'll have to add
-  configurables. (Example: For the email service, clientId, clientSecret and refreshToken of your Gmail account has to be added)
+  - After creating a component, go to `Deploy` page and deploy to Development environment. (ad, currency, payment, productcatalog and shipping services can be deployed without any configurables)
+  - When deploying some of the components, we'll have to add configurables.
+    - emailservice: clientId, clientSecret and refreshToken of your Gmail account has to be added.
+    - recommendation: catalogHost has to be configured. (Example: If the productcatalog endpoint url is `http://prodcat-2479457892:9091/`, `prodcat-2479457892` will be the catalogHost)
+    - checkoutservice: cartHost, catalogHost, currencyHost, shippingHost, paymentHost and emailHost have to be configured.
+    - frontendservice: currencyHost, catalogHost, cartHost, shippingHost, recommendHost, adHost and checkoutHost have to be configured.
+    - cartservice: (Optional) redis store configs can be configured. If not configured, in-memory store will be used.
   - Click `Promote` to promote it to the Production environment.
-  - Go to `Overview` page and create an endpoint (This has to be done for both Development and Production environments)
-  ![image](https://user-images.githubusercontent.com/32201965/217994122-43535848-30e5-45dd-a4fe-d599196f3bd4.png)
+  - Create an endpoint (This has to be done for both Development and Production environments)
+  ![image](https://user-images.githubusercontent.com/32201965/218615142-55508f2d-358b-4e18-9220-60eb166c6643.png)
 - Testing the frontend service
   - Go to `Test` page in the frontend service Component and you will be able to test it.
   - You can find the `API Endpoint` and `Security Header` here
