@@ -16,8 +16,8 @@
  *  under the License.
  */
 
-const FRONTEND_SVC_URL = '';
-const FRONTEND_API_KEY = '';
+const FRONTEND_SVC_URL = process.env.REACT_APP_FRONTEND_SVC_URL;
+const FRONTEND_API_KEY = process.env.REACT_APP_FRONTEND_API_KEY;
 
 export async function getAllQuotes() {
     const response = await fetch(`${FRONTEND_SVC_URL}/quotes.json`);
