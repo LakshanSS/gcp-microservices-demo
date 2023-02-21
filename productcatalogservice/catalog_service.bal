@@ -17,7 +17,7 @@
 import ballerina/grpc;
 import ballerina/io;
 import ballerina/log;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 string productJsonPath = "./resources/products.json";
 

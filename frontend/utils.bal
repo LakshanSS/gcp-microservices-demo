@@ -17,7 +17,7 @@
 import ballerina/http;
 import ballerina/log;
 import ballerina/regex;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 const COOKIE_PATH = "/";
 const COOKIE_SPLIT_TOKEN = "=";

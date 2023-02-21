@@ -17,7 +17,7 @@
 import ballerina/grpc;
 import ballerina/log;
 import ballerinax/jaeger as _;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 configurable string catalogHost = "localhost";
 configurable decimal catalogTimeout = 3;

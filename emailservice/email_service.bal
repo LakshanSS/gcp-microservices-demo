@@ -18,7 +18,7 @@ import ballerina/grpc;
 import ballerina/log;
 import ballerinax/googleapis.gmail as gmail;
 import ballerinax/jaeger as _;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 type GmailConfig record {|
     string refreshToken;

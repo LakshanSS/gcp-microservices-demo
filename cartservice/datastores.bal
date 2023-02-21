@@ -15,7 +15,7 @@
 // under the License.
 
 import ballerinax/redis;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 # Provides the interface for the RedisStore and InMemoryStore.
 public type DataStore distinct object {

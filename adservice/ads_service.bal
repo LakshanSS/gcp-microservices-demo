@@ -18,7 +18,7 @@ import ballerina/grpc;
 import ballerinax/jaeger as _;
 import ballerina/log;
 import ballerina/random;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 type AdCategory record {|
     readonly string category;

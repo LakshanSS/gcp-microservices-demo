@@ -15,7 +15,7 @@
 // under the License.
 
 import ballerina/http;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 //Request Records
 

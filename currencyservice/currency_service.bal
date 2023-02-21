@@ -18,7 +18,7 @@ import ballerina/grpc;
 import ballerina/io;
 import ballerina/log;
 import ballerinax/jaeger as _;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 const FRACTION_SIZE = 1000000000;
 

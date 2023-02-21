@@ -20,8 +20,8 @@ import ballerina/os;
 import ballerina/time;
 import ballerina/uuid;
 import ballerinax/jaeger as _;
-import wso2/client_stubs as stubs;
-import wso2/money;
+import lakshansivagnanasothy/client_stubs as stubs;
+import lakshansivagnanasothy/money;
 
 const SESSION_ID_COOKIE = "sessionIdCookie";
 const CURRENCY_COOKIE = "currencyCookie";

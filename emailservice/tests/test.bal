@@ -15,7 +15,7 @@
 // under the License.
 
 import ballerina/test;
-import wso2/client_stubs as stubs;
+import lakshansivagnanasothy/client_stubs as stubs;
 
 @test:Config {}
 function emailSendTest() returns error? {
