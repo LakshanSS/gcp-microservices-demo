@@ -1,6 +1,6 @@
 ## Introduction
 
-The [gcp-microservices-demo](https://github.com/LakshanSS/gcp-microservices-demo) written in Ballerina has 10 services(9 gGRPC services and 1 HTTP sevice). `client_stubs` and `money` modules have to be published to [Ballerina Central](https://central.ballerina.io/) and they will be pulled from there during the build. 
+The [gcp-microservices-demo](https://github.com/LakshanSS/gcp-microservices-demo) written in Ballerina has 10 services(9 gGRPC services and 1 HTTP sevice). `client_stubs` and `money` modules are published to [Ballerina Central](https://central.ballerina.io/) and they will be pulled from there during the build automatically. 
 Following are the services we will be deploying in Choreo.
 
 | Service     | Port   | Type | Component type in Choreo
